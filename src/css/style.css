@@ -1,0 +1,238 @@
+body {
+  background-color: #ececec;
+}
+
+.page {
+  margin: 30px auto;
+  width: 1000px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #9d9d9d;
+  overflow: hidden;
+}
+
+/** header **/
+.page > .header {
+  display: grid;
+  grid-template-columns: auto 1fr 200px;
+  grid-template-areas: 'name age head'
+                       'job job head'
+                       'contact contact head';
+  align-items: center;
+  padding: 30px 100px;
+  width: 100%;
+  height: 260px;
+  color: #fff;
+  background: #1488CC;
+  background: linear-gradient(to top, #1488CC, #2B32B2);
+}
+.page > .header a {
+  color: #fff;
+}
+.page > .header .name {
+  grid-area: name;
+  font-size: 46px;
+  font-weight: 600;
+}
+.page > .header .age {
+  grid-area: age;
+  align-self: end;
+  margin-bottom: 18px;
+  margin-left: 16px;
+}
+.page > .header .job {
+  grid-area: job;
+  font-size: 22px;
+}
+.page > .header .contact {
+  grid-area: contact;
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 1.875;
+  font-size: 18px;
+}
+.page > .header .contact i {
+  margin-right: 0.1rem;
+}
+/* .page > .header .contact div:nth-child(2n) {
+  margin-left: 40px;
+} */
+.page > .header .contact div:nth-child(2n-1) {
+  margin-right: 40px;
+}
+.page > .header .head {
+  grid-area: head;
+  width: 200px;
+  height: 200px;
+  border: 4px solid #e5e5e5;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.page > .header .head img {
+  width: 100%;
+  height: 100%;
+}
+
+/** content **/
+.page > .content {
+  background-color: #fff;
+  padding: 0 60px;
+  padding-bottom: 36px;
+}
+.page > .content a {
+  color: #303133;
+}
+.page > .content > .container {
+  padding-top: 20px;
+}
+.page > .content > .container .header {
+  display: flex;
+  color: #fff;
+  font-weight: 600;
+}
+.page > .content > .container .header .icon,
+.page > .content > .container .header .title {
+  height: 40px;
+  line-height: 40px;
+  border-radius: 8px;
+  background-color: #1488CC;
+}
+.page > .content > .container .header .icon {
+  width: 40px;
+  text-align: center;
+}
+.page > .content > .container .header .iconfont {
+  font-size: 20px;
+}
+.page > .content > .container .header .title {
+  width: 280px;
+  padding-left: 30px;
+  margin-left: 6px;
+  font-size: 20px;
+}
+.page > .content > .container .main {
+  margin: 10px 20px 0;
+  line-height: 36px;
+}
+/* education */
+.page > .content > .container .education {
+  font-weight: 600;
+}
+.page > .content > .container .education .info {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+/* project */
+.page > .content > .container .project {
+
+}
+.page > .content > .container .project .item {
+
+}
+.page > .content > .container .project .item > .title {
+  display: flex;
+  font-weight: 600;
+}
+.page > .content > .container .project .item > .title div:first-child {
+  width: 180px;
+}
+.page > .content > .container .project .item ul .title {
+  font-weight: 600;
+}
+/* skill */
+.page > .content > .container .skill {
+  font-weight: 600;
+}
+/* prize */
+.page > .content > .container .prize {
+  font-weight: 600;
+}
+.page > .content > .container .prize > div {
+  display: flex;
+}
+.page > .content > .container .prize > div > div:first-child {
+  width: 80px;
+}
+
+/* 大型设备（大台式电脑，1200px 起）设计宽度=1000 */
+@media screen and (min-width: 1200px) { 
+
+}
+
+/* 中型设备（台式电脑，992px 起）设计宽度=900 */
+@media screen and (min-width: 992px) and (max-width: 1199px) { 
+  .page {
+    width: 900px;
+  }
+}
+
+/* 小型设备（平板电脑，768px 起）设计宽度=700 */
+@media screen and (min-width:768px) and (max-width: 991px) { 
+  .page {
+    width: 700px;
+  }
+  .page > .header {
+    padding: 20px 80px;
+  }
+  .page > .content {
+    padding: 0 30px;
+  }
+}
+
+/* 超小设备（手机，小于 768px）设计宽度=100% */
+@media screen and (max-width: 767px) { 
+  .page {
+    margin: 0;
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .page > .header {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'head'
+                         'name'
+                         'job'
+                         'contact';
+    padding: 20px 30px;
+    height: 480px;
+    justify-items: center;
+  }
+  .page > .header .age {
+    display: none;
+  }
+  .page > .header .contact {
+    justify-content: center;
+  }
+  .page > .content {
+    padding: 0 20px;
+  }
+  .page > .header .contact div {
+    margin: 0 20px;
+  }
+  .page > .content > .container .header .title {
+    width: 200px;
+  }
+  .page > .content > .container .education .info {
+    width: 100%;
+  }
+}
+
+/* 打印 */
+@media print {
+  body {
+    background-color: #fff;
+  }
+  .page {
+    margin: 0;
+    width: 1100px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .page > .header {
+    padding: 20px 120px;
+    height: 250px;
+}
+  .page > .content {
+    padding: 0 40px;
+  }
+}
